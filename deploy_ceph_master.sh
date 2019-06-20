@@ -389,40 +389,40 @@ done
 
 main(){
   #yum_update
-  # yum_config
-  # ssh_config
-  # iptables_config
-  # system_config
-  # ulimit_config
+   yum_config
+   ssh_config
+   iptables_config
+   system_config
+   ulimit_config
 
 
-  # change_hosts
-  # rootssh_trust
+   change_hosts
+   rootssh_trust
 
   
-  # yum_install_ceph
-  # config_ceph
-  # install_ceph
+   yum_install_ceph
+   config_ceph
+   install_ceph
   
-# if [ "$?" != 0 ]; then
+ if [ "$?" != 0 ]; then
 
-    # if [ -f "/etc/yum.repos.d/ceph.repo" ];then
-    # yum clean all
-    # rm -rf /etc/yum.repos.d/ceph*
-    # fi
+     if [ -f "/etc/yum.repos.d/ceph.repo" ];then
+     yum clean all
+     rm -rf /etc/yum.repos.d/ceph*
+     fi
 
-    # remove_ceph
-    # install_ceph_repo_url
-    # mon_admin
-    # check_status
-    # else
-    # mon_admin
-    # check_status
-# fi
-# if [ $monitor_number -gt 1 ];then
-    # add_monitor
-    # ovwewrite_conf
-# fi
+     remove_ceph
+     install_ceph_repo_url
+     mon_admin
+     check_status
+     else
+     mon_admin
+     check_status
+ fi
+ if [ $monitor_number -gt 1 ];then
+     add_monitor
+     ovwewrite_conf
+ fi
 compute_change_hosts
 compute_trust
 osd_pool
